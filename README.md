@@ -1,23 +1,23 @@
-# qOverview
+# QOverview
 ### GNOME's Activities dashboard, for other desktops
 
-qOverview is a dashboard which is ~~a clone of~~ *inspired* by GNOME's Activities.
+QOverview is a dashboard which is ~~a clone of~~ *inspired* by GNOME's Activities.
 
-*qOverview*:
+*QOverview*:
 
-![qoverview](.github/qoverview-scrot.png)
+![qoverview](img/qoverview-scrot.png)
 
 *GNOME Activities*:
 
-![GNOME Activities](.github/gnome-scrot.png)
+![GNOME Activities](img/gnome-scrot.png)
 
-qOverview is written in QML with a Python backend.
+QOverview is written in QML with a Python backend.
 
 ## How to Install
 
 ### Prerequisites
 
-The following programs must be installed before installing qOverview. Package names of these for major distros are listed alongside.
+The following programs must be installed before installing QOverview. Package names of these for major distros are listed alongside.
 
 - Python 3
 - PyQt 5 (Arch: `python-pyqt5`, `qt5-declarative` | Ubuntu: `python3-pyqt5`, `python3-pyqt5.qtquick` | SUSE: `python3-qt5` | Fedora: `python3-PyQt5`)
@@ -27,9 +27,9 @@ The following programs must be installed before installing qOverview. Package na
 - wmctrl (Arch, Ubuntu, SUSE, Fedora: `wmctrl`)
 - xdotool (Arch, Ubuntu, SUSE, Fedora: `xdotool`)
 
-**NOTE**: qOverview needs X11 to run, and thus is incompatible with Wayland.
+**NOTE**: QOverview needs X11 to run, and thus is incompatible with Wayland.
 
-<small>If the listed package names are incorrect/don't work/etc please [report the issue](https://github.com/bharadwaj-raju/qOverview/issues/new)!</small>
+<small>If the listed package names are incorrect/don't work/etc please report the issue!</small>
 
 ### Installation
 
@@ -55,14 +55,14 @@ Download and run this:
 
 See your desktop's settings tool for these.
 
-For putting qOverview on a screen corner, see [Binding to screen corner](#binding-to-screen-corner).
+For putting QOverview on a screen corner, see [Binding to screen corner](#binding-to-screen-corner).
 
 ### Use
 
 Press said shortcut key/screen corner and see!
 
 
-**NOTE**: In qOverview, middle mouse button click on a window will *close* it. This can be disabled, see [settings](#settings)
+**NOTE**: In QOverview, middle mouse button click on a window will *close* it. This can be disabled, see [settings](#settings)
 
 **NOTE**: To drag-and-drop a window to a workspace, drag it by holding the title bar below the window.
 
@@ -72,7 +72,7 @@ See the file `~/.config/qoverview.yaml`. It has all the settings (and is quite w
 
 ## Binding to screen corner
 
-The `xdotool` utility will allow you to do bind qOverview to a screen corner or edge easily.
+The `xdotool` utility will allow you to do bind QOverview to a screen corner or edge easily.
 
 You can bind to the following corners and edges of the screen:
 
