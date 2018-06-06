@@ -169,11 +169,7 @@ if __name__ == "__main__":
 
 	app = QGuiApplication(sys.argv)
 
-	if os.path.exists('ui.qml'):
-		qmlview = QQuickView(QUrl('ui.qml'))
-
-	else:
-		qmlview = QQuickView(QUrl('/usr/lib/qoverview/ui.qml'))
+	qmlview = QQuickView(QUrl('/usr/lib/qoverview/ui.qml'))
 
 	qmlview.setResizeMode(qmlview.SizeRootObjectToView)
 
