@@ -48,6 +48,13 @@ def get_window_screenshot(win_id, filename):
 	sp.Popen(['import', '-quiet', '-window', win_id, os.path.join(tmp_dir, filename + '.png')]).wait()
 	return os.path.join(tmp_dir, filename + '.png')
 
+def get_window_icon(win_id, filename):
+
+	cmdline = 'xprop -id '+win_id+' -notype 32c _NET_WM_ICON | perl -0777 -pe \'@_=/\\d+/g; printf "P7\\nWIDTH %d\\nHEIGHT %d\\nDEPTH 4\\nMAXVAL 255\\nTUPLTYPE RGB_ALPHA\\nENDHDR\\n", splice@_,0,2; $_=pack "N*", @_; s/(.)(...)/$2$1/gs\' > ' + os.path.join(tmp_dir, filename + '.pam')
+	sp.Popen(cmdline, shell=True).wait()
+	sp.Popen(['convert', os.path.join(tmp_dir, filename + '.pam'), os.path.join(tmp_dir, filename + '.png')]).wait()
+	return os.path.join(tmp_dir, filename + '.png')
+
 def move_to_workspace(workspace, w_id):
 
 	sp.Popen(['xdotool', 'set_desktop_for_window', w_id, str(workspace)]).wait()

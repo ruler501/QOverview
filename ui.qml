@@ -332,6 +332,15 @@ Item {
 
 					}
 
+					Image {
+						source: modelData[3]
+
+						anchors {
+							top: parent.top
+							right: parent.right
+						}
+					}
+
 					Rectangle {
 						id: "windowoverlay"
 						color: "#3A4055"

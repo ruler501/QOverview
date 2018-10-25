@@ -113,10 +113,13 @@ class PythonQMLInterface(QObject):
 		for index, w_id in enumerate(ids):
 			if wm.get_window_name(w_id) not in [self.uid, 'Desktop — Plasma']:
 				#ifdef KDEPLASMA
-				results.append([wm.get_window_name(w_id), w_id, int(w_id, 16)])
+				results.append([wm.get_window_name(w_id), w_id,
+								int(w_id, 16),
+								wm.get_window_icon(str(int(w_id, 16)), str(int(w_id, 16)))])
 				#else
 				results.append([wm.get_window_name(w_id), w_id,
-								wm.get_window_screenshot(str(int(w_id, 16)), str(int(w_id, 16)))])
+								wm.get_window_screenshot(str(int(w_id, 16)), str(int(w_id, 16))),
+								wm.get_window_icon(str(int(w_id, 16)), str(int(w_id, 16)))])
 				#endif
 
 		return results
