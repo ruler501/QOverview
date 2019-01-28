@@ -423,9 +423,11 @@ for path in search_paths:
 desktop_entries = uniq(desktop_entries)
 
 for entry in desktop_entries:
-	info = _get_desktop_entry_info(_desktop_entry_locate(entry))
-	info['EntryName'] = entry
-	apps_list.append(info)
+	desktop_entry_loc = _desktop_entry_locate(entry)
+	if os.path.isfile(desktop_entry_loc):
+		info = _get_desktop_entry_info(desktop_entry_loc)
+		info['EntryName'] = entry
+		apps_list.append(info)
 
 
 class Service(dbus.service.Object):
